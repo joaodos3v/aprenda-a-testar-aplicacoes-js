@@ -1,6 +1,6 @@
 # Projeto 1
 
-## Aula 1
+## 001
 
 - Opção de terminal: [Fish Shell](fishshell.com)
 - [Jest](https://jestjs.io/pt-BR/): *test runner* com a capacidade de realizar *assertions* (asserções)
@@ -8,7 +8,7 @@
   - Dentro deste diretório, existe um executável `jest`
   - Com isso, não precisamos ter o *jest* instalado no computador para executá-lo, bastando referenciar este executável
 
-## Aula 2
+## 002
 
 - Ao executar o comando `yarn test` (após trocar o *alias* para `jest`), é possível notar algumas instruções
   - A mais interessante neste momento é: `testMatch: **/__tests__/**/*.[jt]s?(x), **/?(*.)+(spec|test).[tj]s?(x) - 0 matches`
@@ -22,3 +22,11 @@
 - **Dica:** para garantir que o teste não é um falso positivo (ou seja, o teste vai passar independente da implementação realizada), uma sugestão é usar a negação
   - Dessa forma, se o teste `expect(sum(2, 2)).toBe(4)` é verdadeiro, consequentemente `expect(sum(2, 2)).not.toBe(4)` **tem que falhar**
   - [.not](https://jestjs.io/pt-BR/docs/expect#not)
+
+## 003
+
+- Uma curiosidade na conversão de strings para inteiro utilizando estes dois formatos:
+  - Opção 1: `const int1 = +num1;`
+  - Opção 2: `const int2 = parseInt(num2, 10);`
+- Ao utilizar a opção 1, uma string vazia será convertida em 0
+  - Esse comportamento foi descoberto porque o terceiro teste (`throw`) falhou!
